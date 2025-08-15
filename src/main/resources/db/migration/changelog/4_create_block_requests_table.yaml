@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+    id: 5
+    author: koval-dev
+    changes:
+      - createTable:
+        tableName: block_requests
+        columns:
+          - column:
+            name: id
+            type: BIGINT
+            constraints:
+              primaryKey: true
+              nullable: false
+          - column:
+            name: card_id
+            type: BIGINT
+            constraints:
+              nullable: false
+          - column:
+            name: requested_status
+            type: VARCHAR(8)
+            constraints:
+              nullable: false
+          - column:
+              name: is_managed
+              type: boolean
+              constraints:
+                nullable: false
+
+  - changeSet:
+    id: 6
+    author: koval-dev
+    changes:
+      - addForeignKeyConstraint:
+        baseTableName: block_requests
+        baseColumnNames: card_id
+        referencedTableName: cards
+        referencedColumnNames: id
+        constraintName: fk_block_card
+        onDelete: CASCADE

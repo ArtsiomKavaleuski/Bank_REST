@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: classpath:/db.migration/changelog/1_create_user_table.yaml
+  - include:
+      file: classpath:/db.migration/changelog/2_create_card_table.yaml

@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+    id: 1
+    author: koval-dev
+    changes:
+      - createTable:
+        tableName: users
+        columns:
+          - column:
+            name: id
+            type: BIGINT
+            constraints:
+              primaryKey: true
+              nullable: false
+          - column:
+            name: user_name
+            type: VARCHAR(255)
+            constraints:
+              nullable: false
+          - column:
+            name: user_password
+            type: VARCHAR(255)
+            constraints:
+              nullable: false
+          - column:
+            name: role
+            type: VARCHAR(5)
+            constraints:
+              nullable: false
+

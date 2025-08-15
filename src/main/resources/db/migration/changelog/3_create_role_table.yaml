@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+    id: 4
+    author: koval-dev
+    changes:
+      - createTable:
+        tableName: roles
+        columns:
+          - column:
+            name: id
+            type: BIGINT
+            constraints:
+              primaryKey: true
+              nullable: false
+          - column:
+            name: role_name
+            type: VARCHAR(255)
+            constraints:
+              nullable: false
