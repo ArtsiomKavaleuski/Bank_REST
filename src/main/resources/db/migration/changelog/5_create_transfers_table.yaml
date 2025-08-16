@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-    id: 5
+    id: 7
     author: koval-dev
     changes:
       - createTable:
-        tableName: block_requests
+        tableName: transfers
         columns:
           - column:
             name: id
@@ -13,23 +13,28 @@ databaseChangeLog:
               primaryKey: true
               nullable: false
           - column:
-            name: card_id
+            name: from_card_id
             type: BIGINT
             constraints:
               nullable: false
           - column:
-            name: requested_status
-            type: VARCHAR(8)
+            name: to_card_id
+            type: BIGINT
             constraints:
               nullable: false
+          - column:
+            name: amount
+            type: DECIMAL(15,2)
+            constraints:
+              nullable: false
+          - column:
+            name: description
+            type: VARCHAR(255)
+            constraints:
+              nullable: true
           - column:
             name: created_at
             type: datetime
-            constraints:
-              nullable: false
-          - column:
-            name: is_managed
-            type: boolean
             constraints:
               nullable: false
 

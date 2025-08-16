@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Set;
 
@@ -34,4 +35,7 @@ public class User {
 
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
     private List<Card> cards;
+
+    @Column(name = "created_at", nullable = false)
+    private LocalDateTime createdAt;
 }

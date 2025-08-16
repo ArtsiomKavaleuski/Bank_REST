@@ -3,3 +3,9 @@ databaseChangeLog:
       file: classpath:/db.migration/changelog/1_create_user_table.yaml
   - include:
       file: classpath:/db.migration/changelog/2_create_card_table.yaml
+  - include:
+      file: classpath:/db.migration/changelog/3_create_role_table.yaml
+  - include:
+      file: classpath:/db.migration/changelog/4_create_block_requests_table.yaml
+  - include:
+      file: classpath:/db.migration/changelog/5_create_transfers_table.yaml

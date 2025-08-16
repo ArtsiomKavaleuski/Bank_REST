@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -24,6 +26,9 @@ public class BlockRequest {
     @Column(name = "requested_status")
     @Enumerated(EnumType.STRING)
     private CardStatus requestedStatus;
+
+    @Column(name = "created_at", nullable = false)
+    private LocalDateTime createdAt;
 
     @Column(name = "isManaged")
     boolean isManaged;
