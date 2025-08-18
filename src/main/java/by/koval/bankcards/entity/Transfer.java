@@ -19,11 +19,13 @@ public class Transfer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "from_card_id", nullable = false)
-    private Long fromCardId;
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "card_id", nullable = false)
+    private Card cardFrom;
 
-    @Column(name = "to_card_id", nullable = false)
-    private Long toCardId;
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "card_id", nullable = false)
+    private Card cardTo;
 
     @Column(name = "amount", nullable = false)
     private Double amount;

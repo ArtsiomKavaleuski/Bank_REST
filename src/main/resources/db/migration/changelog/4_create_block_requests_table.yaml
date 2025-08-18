@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-    id: 5
+    id: 6
     author: koval-dev
     changes:
       - createTable:
@@ -34,7 +34,7 @@ databaseChangeLog:
               nullable: false
 
   - changeSet:
-    id: 6
+    id: 7
     author: koval-dev
     changes:
       - addForeignKeyConstraint:

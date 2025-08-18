@@ -27,14 +27,11 @@ public class User {
     @Column(name = "user_password", nullable = false)
     private String password;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinTable(name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
     private Set<Role> roles;
-
-    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
-    private List<Card> cards;
 
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;

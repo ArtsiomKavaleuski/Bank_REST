@@ -1,6 +1,7 @@
 package by.koval.bankcards.util;
 
 import org.jasypt.encryption.StringEncryptor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
